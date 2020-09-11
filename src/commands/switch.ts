@@ -1,9 +1,8 @@
 import { Command, flags } from '@oclif/command'
-import { exec } from 'child_process'
+import { exec } from 'shelljs'
 
 import { listVersions } from '../assets/list-versions'
-
-// const updateScript = ""
+import { changeVersionBash } from '../assets/bash'
 
 export default class Switch extends Command {
   static description = 'Pass the desired version as a command line argument.'
@@ -17,14 +16,14 @@ export default class Switch extends Command {
   async run() {
     const {args: { version }} = this.parse(Switch)
     const list = await listVersions()
-    console.log('version:', version)
+
     if (!list.includes(version)) {
       console.error('Not a known version of Hasura')
 
       return
     }
-    const bash = exec(`bash ./src/assets/updatescript.sh ` + version)
-
-    bash.stdout.on('data', data => console.log(data))
+    // exec(`eval ${changeVersionBash(version)}`)
+    exec(`echo "test"`)
+    console.log('version:', version)
   }
 }
