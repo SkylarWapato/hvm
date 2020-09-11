@@ -1,7 +1,7 @@
 {
   "name": "@skywap/hvm",
   "description": "Hasura version manager.",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "Skylar Wapato @SkylarWapato",
   "bin": {
     "hvm": "./bin/run"
@@ -11,7 +11,9 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^3",
+    "@types/shelljs": "^0.8.8",
     "node-fetch": "^2.6.1",
+    "shelljs": "^0.8.4",
     "tslib": "^1"
   },
   "devDependencies": {
