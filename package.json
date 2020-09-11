@@ -1,7 +1,7 @@
 {
   "name": "@skywap/hvm",
   "description": "Hasura version manager.",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "author": "Skylar Wapato @SkylarWapato",
   "bin": {
     "hvm": "./bin/run"
@@ -54,7 +54,8 @@
     "postpack": "rm -f oclif.manifest.json",
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "echo NO TESTS",
-    "version": "oclif-dev readme && git add README.md"
+    "version": "oclif-dev readme && git add README.md",
+    "pub": "tsc && yarn publish --access public"
   },
   "types": "lib/index.d.ts"
 }
