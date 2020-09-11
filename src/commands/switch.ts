@@ -22,8 +22,9 @@ export default class Switch extends Command {
 
       return
     }
-    // exec(`eval ${changeVersionBash(version)}`)
-    exec(`echo "test"`)
+    console.log('this.config.bin:', this.config.shell)
+    exec(`eval ${changeVersionBash(version)}`, { shell: this.config.shell })
+    // exec(`echo "test"`, { shell: this.config.shell })
     console.log('version:', version)
   }
 }
