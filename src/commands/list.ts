@@ -14,5 +14,6 @@ export default class List extends Command {
   async run() {
     const list = await listVersions()
     list.forEach(i => console.log(i))
+    console.log('end')
   }
 }

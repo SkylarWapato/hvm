@@ -1,5 +1,5 @@
 import { Command, flags } from '@oclif/command'
-import { exec } from 'shelljs'
+import { execSync } from 'child_process'
 
 import { listVersions } from '../assets/list-versions'
 import { changeVersionBash } from '../assets/bash'
@@ -23,7 +23,7 @@ export default class Switch extends Command {
       return
     }
     console.log('this.config.bin:', this.config.shell)
-    exec(`eval ${changeVersionBash(version)}`, { shell: this.config.shell })
+    execSync(`eval ${changeVersionBash(version)}`, { shell: this.config.shell })
     // exec(`echo "test"`, { shell: this.config.shell })
     console.log('version:', version)
   }

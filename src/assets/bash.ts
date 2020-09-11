@@ -109,7 +109,7 @@ log
 if [ -e $targetFile ]; then
     rm $targetFile
 fi
-hasura version
+
 if ! $(echo "$PATH" | grep -q "$INSTALL_PATH"); then
     log
     log "${'${YELLOW}'}$INSTALL_PATH not found in \$PATH, you might need to add it${'${NC}'}"
