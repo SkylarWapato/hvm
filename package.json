@@ -1,7 +1,7 @@
 {
   "name": "@skywap/hvm",
   "description": "Hasura version manager.",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "author": "Skylar Wapato @SkylarWapato",
   "bin": {
     "hvm": "./bin/run"
