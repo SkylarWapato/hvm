@@ -1,7 +1,7 @@
 {
   "name": "@skywap/hvm",
   "description": "Hasura version manager.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Skylar Wapato @SkylarWapato",
   "bin": {
     "hvm": "./bin/run"
@@ -26,7 +26,7 @@
     "typescript": "^3.3"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=12.0.0"
   },
   "files": [
     "/bin",
