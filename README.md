@@ -19,7 +19,7 @@ $ npm install -g @skywap/hvm
 $ hvm COMMAND
 running command...
 $ hvm (-v|--version|version)
-@skywap/hvm/0.1.6 darwin-x64 node-v12.14.1
+@skywap/hvm/0.1.7 darwin-x64 node-v12.14.1
 $ hvm --help [COMMAND]
 USAGE
   $ hvm COMMAND
@@ -58,10 +58,10 @@ USAGE
   $ hvm list
 
 EXAMPLE
-  $ hvm switch v1.2.2
+  $ hvm list
 ```
 
-_See code: [src/commands/list.ts](https://github.com/SkylarWapato/hvm/blob/v0.1.6/src/commands/list.ts)_
+_See code: [src/commands/list.ts](https://github.com/SkylarWapato/hvm/blob/v0.1.7/src/commands/list.ts)_
 
 ## `hvm switch VERSION`
 
@@ -75,5 +75,5 @@ EXAMPLE
   $ hvm switch v1.2.2
 ```
 
-_See code: [src/commands/switch.ts](https://github.com/SkylarWapato/hvm/blob/v0.1.6/src/commands/switch.ts)_
+_See code: [src/commands/switch.ts](https://github.com/SkylarWapato/hvm/blob/v0.1.7/src/commands/switch.ts)_
 <!-- commandsstop -->
