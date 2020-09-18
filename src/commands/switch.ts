@@ -1,5 +1,11 @@
-import { Command, flags } from '@oclif/command'
-import { execSync } from 'child_process'
+import { Command } from '@oclif/command'
+import { exec } from 'shelljs'
+import {
+  existsSync,
+  mkdirSync,
+  writeFileSync,
+ } from 'fs'
+ import { normalize } from 'path'
 
 import { listVersions } from '../assets/list-versions'
 import { changeVersionBash } from '../assets/bash'
@@ -15,6 +21,8 @@ export default class Switch extends Command {
 
   async run() {
     const {args: { version }} = this.parse(Switch)
+    const { dataDir } = this.config
+    const path = dataDir
     const list = await listVersions()
 
     if (!list.includes(version)) {
@@ -22,9 +30,12 @@ export default class Switch extends Command {
 
       return
     }
-    console.log('this.config.bin:', this.config.shell)
-    execSync(`eval ${changeVersionBash(version)}`, { shell: this.config.shell })
-    // exec(`echo "test"`, { shell: this.config.shell })
+    if(!existsSync(path)) {
+      mkdirSync(normalize(path), { recursive: true })
+    }
+    const file = normalize(path + '/tmp.sh')
+    writeFileSync(file, changeVersionBash(version))
+    exec(`bash ${file}`, { shell: this.config.shell })
     console.log('version:', version)
   }
 }
